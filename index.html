@@ -1,54 +1,34 @@
-<script>
-	import Layout from "$lib/BaseLayout.svelte";
-</script>
-
-
-<Layout>
 <body>
 	<div id="video-container">
 		<video autoplay loop muted playsinline>
-			<source
-				src="/images/cybertruck-simulator/bg-video.mp4"
-				type="video/mp4"
-			/>
+			<source src="images/bg-video.mp4" type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
 	</div>
 	<div id="container">
 		<div class="section">
-			<img
-				id="main-img"
-				src="/images/cybertruck-simulator/title.png"
-				alt="Cybertruck Simulator 2024"
-			/>
+			<img id="main-img" src="images/title.png" alt="Cybertruck Simulator 2024" />
 			<!-- </div>
 		<div class="section"> -->
 			<!-- <h1>Cybertruck Simulator 2024</h1> -->
 			<p>
-				Rack up as many lawsuits as you can. Also available on <a href="https://pedestriantactics.itch.io/cybertruck-simulator">itch.io</a>.
+				Rack up as many lawsuits as you can. Also available on <a
+					href="https://pedestriantactics.itch.io/cybertruck-simulator">itch.io</a>.
 			</p>
 		</div>
 		<div class="section">
-		<h4>
-				<a
-					class="highlighted"
-					href="https://youtu.be/502fiyjHqGM?si=QFAVOl6hI7hWdpBw"
-					>Watch the trailer</a
-				>
+			<h4>
+				<a class="highlighted" href="https://youtu.be/502fiyjHqGM?si=QFAVOl6hI7hWdpBw">Watch the trailer</a>
 			</h4>
 			<h4>
-				<a
-					class="highlighted"
-					href="https://github.com/pedestriantactics/cybertruck-simulator/releases/download/PT-G3/cybertrucksimulator-mac.dmg"
-					>Download for Mac</a
-				>
+				<a class="highlighted"
+					href="https://github.com/pedestriantactics/cybertruck-simulator/releases/download/PT-G3/cybertrucksimulator-mac.dmg">Download
+					for Mac</a>
 			</h4>
 			<h4>
-				<a
-					class="highlighted"
-					href="https://github.com/pedestriantactics/cybertruck-simulator/releases/download/PT-G3/cybertrucksimulator-windows.exe"
-					>Download for Windows</a
-				>
+				<a class="highlighted"
+					href="https://github.com/pedestriantactics/cybertruck-simulator/releases/download/PT-G3/cybertrucksimulator-windows.exe">Download
+					for Windows</a>
 			</h4>
 		</div>
 	</div>
@@ -57,26 +37,33 @@
 		A game by <a href="http://pedestriantactics.com">Pedestrian Tactics</a>
 	</div>
 </body>
-</Layout>
 <style>
+	@font-face {
+		font-family: "Hyperwalk VF";
+		src: url("fonts/HyperwalkVF.ttf") format("ttf");
+		src: url("fonts/HyperwalkVF.woff") format("woff");
+		src: url("fonts/HyperwalkVF.woff2") format("woff2");
+	}
+
 	/* add the font PT-F3 */
 	@font-face {
 		font-family: "F3-Mono-Bold";
-		src: url("/fonts/PT-F3Mono-Bold.woff");
+		src: url("fonts/PT-F3Mono-Bold.woff");
 	}
+
 	@font-face {
 		font-family: "F3-Mono-Medium";
-		src: url("/fonts/PT-F3Mono-Medium.woff");
+		src: url("fonts/PT-F3Mono-Medium.woff");
 	}
 
 	@font-face {
 		font-family: "F3-Mono-Regular";
-		src: url("/fonts/PT-F3Mono-Regular.woff");
+		src: url("fonts/PT-F3Mono-Regular.woff");
 	}
 
 	@font-face {
 		font-family: "F3-Mono-Light";
-		src: url("/fonts/PT-F3Mono-Light.woff");
+		src: url("fonts/PT-F3Mono-Light.woff");
 	}
 
 	:root {
@@ -87,6 +74,8 @@
 	}
 
 	body {
+		font-family: "Hyperwalk VF", sans-serif;
+		font-weight: 80;
 		color: white;
 	}
 
@@ -107,7 +96,8 @@
 		width: 100vw;
 		height: 100vh;
 		overflow: hidden;
-		z-index: -1; /* Ensure the video stays in the background */
+		z-index: -1;
+		/* Ensure the video stays in the background */
 	}
 
 	#video-container video {
@@ -174,9 +164,25 @@
 	} */
 
 	.highlighted {
-		color: black !important;
+		color: black;
 		background-color: white;
+		font-weight: 80;
+		padding: .3em .3em .1em .3em;
+		display: inline-block;
+		/* the margin below links seemed small before the warning label */
+		margin-bottom: 1em;
 	}
+
+	/* remove decoration from links */
+	a,
+	a:hover,
+	a:visited,
+	a:active {
+		/* color: var(--color-fg); */
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-fg);
+	}
+
 
 	.section {
 		margin-bottom: 2rem;
